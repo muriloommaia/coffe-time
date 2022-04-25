@@ -16,7 +16,7 @@ export default function TitleComponent() {
   return (
     <div className="flex items-center">
       <div className="text-center p-2">
-        <p className="text-5xl">Café con</p>
+        <p className="text-6xl josefin-font">Café con</p>
         <div className="flex justify-center square-font">
           {edition ? (
             <input
