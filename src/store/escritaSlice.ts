@@ -4,8 +4,8 @@ export const slice = createSlice({
   name: 'escrita',
   initialState: {
     active: false,
-    time: 1200,
-    timeLeft: 1200,
+    time: 1500,
+    timeLeft: 1500,
   },
   reducers: {
     setActiveEscrita(state, { payload }) {

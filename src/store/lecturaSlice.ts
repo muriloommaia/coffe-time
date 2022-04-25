@@ -4,8 +4,8 @@ export const slice = createSlice({
   name: 'lectura',
   initialState: {
     active: false,
-    time: 1200,
-    timeLeft: 1200,
+    time: 600,
+    timeLeft: 600,
   },
   reducers: {
     setActiveLectura(state, { payload }) {
