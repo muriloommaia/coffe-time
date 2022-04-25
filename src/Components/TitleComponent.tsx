@@ -14,23 +14,37 @@ export default function TitleComponent() {
   };
 
   return (
-    <div>
-      <div>
-        <p>Café con</p>
-        <div>
-          <button type="button" className="text-black" onClick={handleClick}>
-            {edition
-              ? <p className="text-black"><i className="fa-solid fa-check" /></p> : <p className="text-black"><i className="fa-solid fa-pen-to-square" /></p>}
-          </button>
+    <div className="flex items-center">
+      <div className="text-center p-2">
+        <p className="text-5xl">Café con</p>
+        <div className="flex justify-center square-font">
           {edition ? (
-            <input type="text" value={title} onChange={handleChange} />
+            <input
+              type="text"
+              value={title}
+              className="w-6/12 px-5 py-2 text-black focus:outline-none focus:bg-white border-2 border-gray-300 rounded-lg text-7xl text-center"
+              onChange={handleChange}
+            />
           ) : (
-            <p>{title}</p>
+            <p className="text-8xl">{title}</p>
           )}
+          <button type="button" className="text-black px-2" onClick={handleClick}>
+            {edition
+              ? (
+                <p className="text-black">
+                  <i className="fa-solid fa-check" />
+                </p>
+              )
+              : (
+                <p className="text-black">
+                  <i className="fa-solid fa-pen-to-square" />
+                </p>
+              )}
+          </button>
         </div>
       </div>
       <div>
-        <img src={coffeeIcon} alt="coffee icon" />
+        <img src={coffeeIcon} alt="coffee icon" width="50px" />
       </div>
     </div>
   );
