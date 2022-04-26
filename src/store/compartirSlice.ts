@@ -12,10 +12,10 @@ export const slice = createSlice({
       return { ...state, active: payload };
     },
     setTimeCompartir(state, { payload }) {
-      return { ...state, time: payload };
+      return { ...state, time: payload, timeLeft: payload };
     },
-    setTimeLeftCompartir(state, { payload }) {
-      return { ...state, timeLeft: payload };
+    setTimeLeftCompartir(state) {
+      return { ...state, timeLeft: state.timeLeft - 1 };
     },
   },
 });
