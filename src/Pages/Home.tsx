@@ -1,4 +1,5 @@
 import React from 'react';
+// import ButtonStart from '../Components/ButtonStart';
 import GridComponent from '../Components/GridComponent';
 import TitleComponent from '../Components/TitleComponent';
 
@@ -8,8 +9,11 @@ export default function Home() {
       <nav>
         <TitleComponent />
       </nav>
-      <main className="w-full flex justify-center">
+      <main className="w-full flex flex-col items-center">
         <GridComponent />
+        <div className="py-6">
+          {/* <ButtonStart /> */}
+        </div>
       </main>
     </div>
   );

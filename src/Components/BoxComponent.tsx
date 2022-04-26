@@ -4,6 +4,7 @@ import { RootState } from '../store';
 
 export default function BoxComponent({ text, image }: { text: 'lectura' | 'escrita' | 'compartir'; image: string }) {
   const { time, timeLeft, active } = useSelector((state: RootState) => state[text]);
+  console.log(time);
   const secondsToMinutes = (seconds: number) => {
     const minutes = Math.floor(seconds / 60);
     const secondsLeft = seconds % 60;
@@ -18,6 +19,8 @@ export default function BoxComponent({ text, image }: { text: 'lectura' | 'escri
         <img src={image} alt={text} className="w-5/12 m-auto" />
       </div>
       <div>
+        Faltan:
+        { ' '}
         {secondsToMinutes(timeLeft)}
       </div>
     </div>
