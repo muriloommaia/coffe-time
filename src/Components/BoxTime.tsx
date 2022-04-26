@@ -16,7 +16,6 @@ export default function BoxTime({ text, image }: { text: 'lectura' | 'escrita' |
     const { value } = e.target;
     const minutes = parseInt(value, 10);
     dispatch(setTimes[text].time(minutes * 60));
-    dispatch(setTimes[text].timeLeft(minutes * 60));
   };
   return (
     <div className={`flex flex-col items-center cursor-pointer border-2 shadow-2xl hover:scale-105 ${active ? 'border-green-800' : 'border-black'}`}>

@@ -3,20 +3,49 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setCurrent, setTimes } from '../helpers/setsSlice';
 import { RootState } from '../store';
 
-export default function BoxComponent({ text, image }: { text: 'lectura' | 'escrita' | 'compartir'; image: string }) {
-  const { time, timeLeft, active } = useSelector((state: RootState) => state[text]);
+export default function BoxComponent(
+  { text, image }: { text: 'lectura' | 'escrita' | 'compartir'; image: string },
+) {
+  const { timeLeft, active } = useSelector((state: RootState) => state[text]);
   const { active: activeGeneral } = useSelector((state: RootState) => state.current);
-  console.log(time);
   const dispatch = useDispatch();
+  // const [time, setTime] = React.useState(timeLeft);
+
   const secondsToMinutes = (seconds: number) => {
     const minutes = Math.floor(seconds / 60);
     const secondsLeft = seconds % 60;
     return `${minutes}:${secondsLeft < 10 ? `0${secondsLeft}` : secondsLeft}`;
   };
-  const handleClick = () => {
+
+  const controlTime = () => {
+    const second = 1000;
+    let nextDate = new Date().getTime() + second;
+    if (!active) {
+      const interval = setInterval(() => {
+        const date = new Date().getTime();
+        if (date > nextDate && timeLeft > 0) {
+          // setTime((prev) => {
+          //   dispatch(setTimes[text].timeLeft(prev - 1));
+          //   return prev - 1;
+          // });
+          dispatch((setTimes[text].timeLeft()));
+          nextDate = date + second;
+        }
+      }, 500);
+      localStorage.setItem('interval', JSON.stringify(interval));
+    }
+    if (active) {
+      const interval = +JSON.parse(localStorage.getItem('interval') as string);
+      clearInterval(interval);
+    }
+  };
+
+  const handleClick = async () => {
     dispatch(setTimes[text].active(!active));
     dispatch(setCurrent.active(!activeGeneral));
+    controlTime();
   };
+
   return (
     <button
       type="button"
