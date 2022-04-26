@@ -9,7 +9,7 @@ export default function BoxComponent(
   const { timeLeft, active } = useSelector((state: RootState) => state[text]);
   const { active: activeGeneral } = useSelector((state: RootState) => state.current);
   const dispatch = useDispatch();
-  // const [time, setTime] = React.useState(timeLeft);
+  const [time, setTime] = React.useState(timeLeft);
 
   const secondsToMinutes = (seconds: number) => {
     const minutes = Math.floor(seconds / 60);
@@ -20,21 +20,27 @@ export default function BoxComponent(
   const controlTime = () => {
     const second = 1000;
     let nextDate = new Date().getTime() + second;
-    if (!active) {
+    if (!active && !activeGeneral) {
       const interval = setInterval(() => {
         const date = new Date().getTime();
-        if (date > nextDate && timeLeft > 0) {
-          // setTime((prev) => {
-          //   dispatch(setTimes[text].timeLeft(prev - 1));
-          //   return prev - 1;
-          // });
-          dispatch((setTimes[text].timeLeft()));
-          nextDate = date + second;
-        }
+        setTime((prev) => {
+          if (date > nextDate && prev > 0) {
+            dispatch((setTimes[text].timeLeft()));
+            nextDate = date + second;
+            return prev - 1;
+          }
+          if (prev <= 0) {
+            dispatch(setCurrent.active(false));
+            dispatch(setTimes[text].active(false));
+            clearInterval(interval);
+            return 0;
+          }
+          return prev;
+        });
       }, 500);
       localStorage.setItem('interval', JSON.stringify(interval));
     }
-    if (active) {
+    if (active && activeGeneral) {
       const interval = +JSON.parse(localStorage.getItem('interval') as string);
       clearInterval(interval);
     }
@@ -62,7 +68,7 @@ export default function BoxComponent(
       <div>
         Faltan:
         { ' '}
-        {secondsToMinutes(timeLeft)}
+        {secondsToMinutes(time)}
       </div>
     </button>
   );
