@@ -5,6 +5,7 @@ export const slice = createSlice({
   initialState: {
     active: false,
     moment: '',
+    timeLeft: 0,
   },
   reducers: {
     setActiveCurrent(state, { payload }) {
@@ -13,9 +14,12 @@ export const slice = createSlice({
     setMomentCurrent(state, { payload }) {
       return { ...state, moment: payload };
     },
+    setTimeLeftCurrent(state, { payload }) {
+      return { ...state, timeLeft: payload };
+    },
   },
 });
 
-export const { setActiveCurrent, setMomentCurrent } = slice.actions;
+export const { setActiveCurrent, setMomentCurrent, setTimeLeftCurrent } = slice.actions;
 
 export default slice.reducer;
