@@ -12,10 +12,10 @@ export default function GridComponent() {
     ['escrita', write],
     ['compartir', talk],
   ];
-  const [active, setActive] = React.useState(false);
+  const [timeChange, setTimeChange] = React.useState(false);
 
   const handleClick = () => {
-    setActive(!active);
+    setTimeChange(!timeChange);
   };
 
   function renderBoxes() {
@@ -29,7 +29,7 @@ export default function GridComponent() {
     <div className="w-full flex flex-col items-center">
       <div className="w-11/12">
         <div className="grid grid-cols-3 gap-4 ">
-          { active ? renderTime() : renderBoxes() }
+          { timeChange ? renderTime() : renderBoxes() }
         </div>
       </div>
       <div className="pt-6">

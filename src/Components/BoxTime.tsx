@@ -1,27 +1,12 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { setTimes } from '../helpers/setsSlice';
 import { RootState } from '../store';
-import { setTimeCompartir, setTimeLeftCompartir } from '../store/compartirSlice';
-import { setTimeEscrita, setTimeLeftEscrita } from '../store/escritaSlice';
-import { setTimeLectura, setTimeLeftLectura } from '../store/lecturaSlice';
 
 export default function BoxTime({ text, image }: { text: 'lectura' | 'escrita' | 'compartir'; image: string }) {
   const { time, active } = useSelector((state: RootState) => state[text]);
   const dispatch = useDispatch();
-  const setTimes = {
-    lectura: {
-      time: setTimeLectura,
-      timeLeft: setTimeLeftLectura,
-    },
-    escrita: {
-      time: setTimeEscrita,
-      timeLeft: setTimeLeftEscrita,
-    },
-    compartir: {
-      time: setTimeCompartir,
-      timeLeft: setTimeLeftCompartir,
-    },
-  };
+
   const secondsToMinutes = (seconds: number) => {
     const minutes = Math.floor(seconds / 60);
     return minutes;
