@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setCurrent, setTimes } from '../helpers/setsSlice';
+import beep from '../sounds/beep.wav';
 import { RootState } from '../store';
 import { MomentType } from '../types/BoxType';
 
@@ -11,7 +12,7 @@ export default function BoxComponent(
   const { active: activeGeneral } = useSelector((state: RootState) => state.current);
   const dispatch = useDispatch();
   const [time, setTime] = React.useState(timeLeft);
-
+  const audio = new Audio(beep);
   const secondsToMinutes = (seconds: number) => {
     const minutes = Math.floor(seconds / 60);
     const secondsLeft = seconds % 60;
@@ -34,6 +35,7 @@ export default function BoxComponent(
             dispatch(setCurrent.active(false));
             dispatch(setTimes[text].active(false));
             clearInterval(interval);
+            audio.play();
             return 0;
           }
           return prev;
