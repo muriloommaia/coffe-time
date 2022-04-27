@@ -57,7 +57,7 @@ export default function BoxComponent(
   return (
     <button
       type="button"
-      className={`flex flex-col items-center cursor-pointer border-2 shadow-2xl hover:scale-105 ${active ? 'border-green-800' : 'border-black'}`}
+      className={`flex flex-col items-center cursor-pointer border-2  ${!activeGeneral ? 'hover:scale-105' : 'bg-gray-400 opacity-50'} ${active ? 'border-green-800 border-4 rounded-md shadow-2xl scale-105 opacity-100 bg-green-200 hover:scale-110' : 'border-black '}`}
       onClick={handleClick}
       disabled={(activeGeneral && !active)}
     >
