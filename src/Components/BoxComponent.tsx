@@ -49,6 +49,7 @@ export default function BoxComponent(
   const handleClick = async () => {
     dispatch(setTimes[text].active(!active));
     dispatch(setCurrent.active(!activeGeneral));
+    dispatch(setCurrent.moment(text));
     controlTime();
   };
 
