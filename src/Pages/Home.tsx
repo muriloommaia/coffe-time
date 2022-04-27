@@ -1,6 +1,7 @@
 import React from 'react';
 // import ButtonStart from '../Components/ButtonStart';
 import GridComponent from '../Components/GridComponent';
+import ProgressBar from '../Components/ProgressBar';
 import TitleComponent from '../Components/TitleComponent';
 
 export default function Home() {
@@ -11,8 +12,9 @@ export default function Home() {
       </nav>
       <main className="w-full flex flex-col items-center">
         <GridComponent />
-        <div className="py-6">
+        <div className="py-6 w-10/12">
           {/* <ButtonStart /> */}
+          <ProgressBar />
         </div>
       </main>
     </div>

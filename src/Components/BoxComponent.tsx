@@ -37,7 +37,7 @@ export default function BoxComponent(
           }
           return prev;
         });
-      }, 500);
+      }, 10);
       localStorage.setItem('interval', JSON.stringify(interval));
     }
     if (active && activeGeneral) {
