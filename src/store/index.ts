@@ -1,13 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit';
 import compartirSlice from './compartirSlice';
 import currentSlice from './currentSlice';
-import escritaSlice from './escritaSlice';
+import escritaSlice from './escrituraSlice';
 import lecturaSlice from './lecturaSlice';
 
 export const store = configureStore({
   reducer: {
     lectura: lecturaSlice,
-    escrita: escritaSlice,
+    escritura: escritaSlice,
     compartir: compartirSlice,
     current: currentSlice,
   },

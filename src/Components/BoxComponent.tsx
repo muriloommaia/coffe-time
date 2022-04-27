@@ -2,9 +2,10 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setCurrent, setTimes } from '../helpers/setsSlice';
 import { RootState } from '../store';
+import { MomentType } from '../types/BoxType';
 
 export default function BoxComponent(
-  { text, image }: { text: 'lectura' | 'escrita' | 'compartir'; image: string },
+  { text, image }: { text: MomentType; image: string },
 ) {
   const { timeLeft, active } = useSelector((state: RootState) => state[text]);
   const { active: activeGeneral } = useSelector((state: RootState) => state.current);

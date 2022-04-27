@@ -1,25 +1,25 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 export const slice = createSlice({
-  name: 'escrita',
+  name: 'escritura',
   initialState: {
     active: false,
     time: 1500,
     timeLeft: 1500,
   },
   reducers: {
-    setActiveEscrita(state, { payload }) {
+    setActiveEscritura(state, { payload }) {
       return { ...state, active: payload };
     },
-    setTimeEscrita(state, { payload }) {
+    setTimeEscritura(state, { payload }) {
       return { ...state, time: payload, timeLeft: payload };
     },
-    setTimeLeftEscrita(state) {
+    setTimeLeftEscritura(state) {
       return { ...state, timeLeft: state.timeLeft - 1 };
     },
   },
 });
 
-export const { setActiveEscrita, setTimeEscrita, setTimeLeftEscrita } = slice.actions;
+export const { setActiveEscritura, setTimeEscritura, setTimeLeftEscritura } = slice.actions;
 
 export default slice.reducer;

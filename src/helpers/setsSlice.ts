@@ -1,6 +1,6 @@
 import { setActiveCompartir, setTimeCompartir, setTimeLeftCompartir } from '../store/compartirSlice';
 import { setActiveCurrent, setMomentCurrent, setTimeLeftCurrent } from '../store/currentSlice';
-import { setActiveEscrita, setTimeEscrita, setTimeLeftEscrita } from '../store/escritaSlice';
+import { setActiveEscritura, setTimeEscritura, setTimeLeftEscritura } from '../store/escrituraSlice';
 import { setActiveLectura, setTimeLectura, setTimeLeftLectura } from '../store/lecturaSlice';
 
 export const setTimes = {
@@ -9,10 +9,10 @@ export const setTimes = {
     timeLeft: setTimeLeftLectura,
     active: setActiveLectura,
   },
-  escrita: {
-    time: setTimeEscrita,
-    timeLeft: setTimeLeftEscrita,
-    active: setActiveEscrita,
+  escritura: {
+    time: setTimeEscritura,
+    timeLeft: setTimeLeftEscritura,
+    active: setActiveEscritura,
   },
   compartir: {
     time: setTimeCompartir,

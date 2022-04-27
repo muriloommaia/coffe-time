@@ -17,7 +17,7 @@ type currentSelect = {
 export default function GridComponent() {
   const grid:BoxType[] = [
     ['lectura', book],
-    ['escrita', write],
+    ['escritura', write],
     ['compartir', talk],
   ];
   const dispatch = useDispatch();

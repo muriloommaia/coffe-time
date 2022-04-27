@@ -2,8 +2,9 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setTimes } from '../helpers/setsSlice';
 import { RootState } from '../store';
+import { MomentType } from '../types/BoxType';
 
-export default function BoxTime({ text, image }: { text: 'lectura' | 'escrita' | 'compartir'; image: string }) {
+export default function BoxTime({ text, image }: { text: MomentType; image: string }) {
   const { time, active } = useSelector((state: RootState) => state[text]);
   const dispatch = useDispatch();
 
