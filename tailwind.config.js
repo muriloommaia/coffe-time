@@ -15,9 +15,9 @@ module.exports = {
       brown: '301008',
     },
     backgroundImage: {
-      'bg-texture': "url('src/images/bg-texture.png')",
-      'bg-progressBar': "url('src/images/bg-progressBar.png')",
-      'bg-cup': "url('src/images/cup.png')",
+      'bg-texture': "url('https://raw.githubusercontent.com/muriloommaia/coffee-time/main/src/images/bg-texture.png')",
+      'bg-progressBar': "url('https://raw.githubusercontent.com/muriloommaia/coffee-time/main/src/images/bg-progressBar.png')",
+      'bg-cup': "url('https://raw.githubusercontent.com/muriloommaia/coffee-time/main/src/images/cup.png')",
     },
   },
   plugins: [],
