@@ -1,6 +1,5 @@
 import React, { MouseEvent, useEffect, useState } from 'react';
 import { setLocalStorage } from '../helpers/localStorage';
-import coffeeIcon from '../images/coffee-icon-svgrepo-com.svg';
 
 export default function TitleComponent() {
   const [title, setTitle] = useState('...');
@@ -26,10 +25,10 @@ export default function TitleComponent() {
   };
 
   return (
-    <div className="flex items-center py-10">
+    <div className="flex items-center py-10  ">
       <div className="text-center p-2 flex">
         <div>
-          <div className="">
+          <div className="bg-bottom bg-contain bg-bg-cup">
             <p className="text-6xl josefin-font">CAFÉ</p>
             <p className="text-4xl josefin-font -translate-y-3.5">-con-</p>
           </div>
@@ -60,9 +59,6 @@ export default function TitleComponent() {
               </p>
             )}
         </button>
-      </div>
-      <div>
-        <img src={coffeeIcon} alt="coffee icon" width="50px" />
       </div>
     </div>
   );

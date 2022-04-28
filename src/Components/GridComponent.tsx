@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setCurrent, setTimes } from '../helpers/setsSlice';
 import book from '../images/book.svg';
-import talk from '../images/talk.svg';
+import talk from '../images/talk2.png';
 import write from '../images/write.svg';
 import { RootState } from '../store';
 import { BoxType, MomentType } from '../types/BoxType';

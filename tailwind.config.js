@@ -17,6 +17,7 @@ module.exports = {
     backgroundImage: {
       'bg-texture': "url('src/images/bg-texture.png')",
       'bg-progressBar': "url('src/images/bg-progressBar.png')",
+      'bg-cup': "url('src/images/cup.png')",
     },
   },
   plugins: [],
