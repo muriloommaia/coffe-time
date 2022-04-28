@@ -1,11 +1,23 @@
-import React, { useState } from 'react';
+import React, { MouseEvent, useEffect, useState } from 'react';
+import { setLocalStorage } from '../helpers/localStorage';
 import coffeeIcon from '../images/coffee-icon-svgrepo-com.svg';
 
 export default function TitleComponent() {
   const [title, setTitle] = useState('...');
   const [edition, setEdition] = useState(false);
 
-  const handleClick = () => {
+  useEffect(() => {
+    const localTitle = localStorage.getItem('title');
+    if (localTitle) {
+      setTitle(JSON.parse(localTitle));
+    }
+  }, []);
+
+  const handleClick = (e: MouseEvent) => {
+    e.preventDefault();
+    if (edition) {
+      setLocalStorage('title', title);
+    }
     setEdition(!edition);
   };
 
@@ -28,7 +40,7 @@ export default function TitleComponent() {
           ) : (
             <p className="text-8xl">{title}</p>
           )}
-          <button type="button" className="text-black px-2" onClick={handleClick}>
+          <button type="submit" className="text-black px-2" onClick={handleClick}>
             {edition
               ? (
                 <p className="text-black">
