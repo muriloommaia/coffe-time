@@ -19,19 +19,19 @@ export default function BoxTime({ text, image }: { text: MomentType; image: stri
     dispatch(setTimes[text].time(minutes * 60));
   };
   return (
-    <div className={`flex flex-col items-center cursor-pointer border-2 shadow-2xl hover:scale-105 ${active ? 'border-green-800' : 'border-black'}`}>
-      <div>
+    <div className={`flex flex-col items-center text-blue1 rounded-lg cursor-pointer border-2 bg-blue3 hover:scale-105 ${active ? 'border-green-800' : 'border-black'} md:min-h-[250px]`}>
+      <div className="pt-3">
         {text.toUpperCase()}
       </div>
       <div className="w-10/12 m-auto p-2">
-        <img src={image} alt={text} className="w-5/12 m-auto" />
+        <img src={image} alt={text} className="w-5/12 m-auto fill-orange2" />
       </div>
-      <div className="w-10/12 m-auto p-2 flex ">
+      <div className="w-10/12 m-auto p-2 flex flex-wrap">
         <input
           type="number"
           value={secondsToMinutes(time)}
           onChange={handleChange}
-          className="w-5/12 m-auto"
+          className="w-5/12 m-auto flex  bg-blue3 border-2 rounded-lg text-center text-blue1 text-xl"
         />
         <p>minutos</p>
       </div>

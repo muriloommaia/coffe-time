@@ -25,7 +25,7 @@ export default function TitleComponent() {
   };
 
   return (
-    <div className="flex items-center py-10  ">
+    <div className="flex items-center pt-10  ">
       <div className="text-center p-2 flex">
         <div>
           <div className="bg-bottom bg-contain bg-bg-cup">
