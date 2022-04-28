@@ -13,8 +13,8 @@ export default function ProgressBar() {
     return calcPercentage(left, total);
   };
   return (
-    <div className="w-full bg-gray-200 h-5 rounded-xl">
-      <div className="h-5 bg-blue-800 rounded-xl text-center" style={{ width: `${progress()}%` }}>
+    <div className="w-full bg-blue3 h-8 rounded-xl flex items-center border-4 border-blue3">
+      <div className="h-5 bg-orange2 rounded-xl text-center text-blue1 bg-bg-progressBar" style={{ width: `${progress()}%` }}>
         { ' ' }
         {`${progress()}%`}
       </div>

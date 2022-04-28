@@ -52,19 +52,23 @@ export default function GridComponent() {
           ? (
             <button
               type="button"
-              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+              className="bg-blue-500 hover:border-white1 hover:scale-105 text-white font-bold py-2 px-4 rounded-full border-2 border-orange2 bg-orange2 m-0"
               onClick={handleClick}
             >
-              Cambiar tiempo
+              <p className="translate-y-0.5">
+                Cambiar tiempo
+              </p>
             </button>
           )
           : (
             <button
               type="button"
-              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+              className="bg-blue-500 hover:border-white1 hover:scale-105 text-white font-bold py-2 px-4 rounded-full border-2 border-orange2 bg-orange2 m-0"
               onClick={handleClick}
             >
-              Pause
+              <p className="translate-y-0.5">
+                Pause
+              </p>
             </button>
           )}
 

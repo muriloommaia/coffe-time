@@ -59,17 +59,17 @@ export default function BoxComponent(
   return (
     <button
       type="button"
-      className={`flex flex-col items-center cursor-pointer border-2  ${!activeGeneral ? 'hover:scale-105 shadow-xl' : 'bg-gray-400 opacity-50'} ${active ? 'border-green-800 border-4 rounded-md shadow-2xl scale-105 opacity-100 bg-green-200 hover:scale-110' : 'border-black '}`}
+      className={`flex flex-col items-center text-blue1 rounded-lg cursor-pointer border-2  ${!activeGeneral ? 'hover:scale-105 shadow-xl' : 'bg-gray-400 opacity-50'} ${active ? 'border-green-800 border-4 rounded-md shadow-2xl scale-105 opacity-100 bg-green-200 hover:scale-110' : 'border-black '} bg-blue3`}
       onClick={handleClick}
       disabled={(activeGeneral && !active)}
     >
-      <div>
+      <div className="pt-3">
         {text.toUpperCase()}
       </div>
       <div className="w-10/12 m-auto p-2">
-        <img src={image} alt={text} className="w-5/12 m-auto" />
+        <img src={image} alt={text} className="w-5/12 m-auto fill-orange2" />
       </div>
-      <div>
+      <div className="pb-4">
         Faltan:
         { ' '}
         {secondsToMinutes(time)}

@@ -6,7 +6,7 @@ import TitleComponent from '../Components/TitleComponent';
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center josefin-font">
+    <div className="flex flex-col items-center josefin-font text bg-blue2 h-screen text-white1 bg-bg-texture">
       <nav>
         <TitleComponent />
       </nav>
