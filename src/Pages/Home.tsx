@@ -1,4 +1,5 @@
-import React from 'react';
+/* eslint-disable react/react-in-jsx-scope */
+import { MainContainer } from '../Components';
 import ChangeTime from '../Components/ChangeTime';
 // import ButtonStart from '../Components/ButtonStart';
 import GridComponent from '../Components/GridComponent';
@@ -7,7 +8,7 @@ import TitleComponent from '../Components/TitleComponent';
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center josefin-font text bg-blue2 h-full min-h-screen text-white1 bg-bg-texture">
+    <MainContainer className="josefin-font text bg-blue2 text-white1 bg-bg-texture">
       <nav>
         <TitleComponent />
       </nav>
@@ -20,6 +21,6 @@ export default function Home() {
           <ProgressBar />
         </div>
       </main>
-    </div>
+    </MainContainer>
   );
 }

@@ -30,6 +30,7 @@ export default function BoxTime({ text, image }: { text: MomentType; image: stri
         <input
           type="number"
           value={secondsToMinutes(time)}
+          min={0}
           onChange={handleChange}
           className="w-5/12 m-auto flex  bg-blue3 border-2 rounded-lg text-center text-blue1 text-xl"
         />

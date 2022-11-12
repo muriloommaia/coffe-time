@@ -1,7 +1,8 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setCurrent, setTimes } from '../helpers/setsSlice';
-import beep from '../sounds/beep.wav';
+import beep from '../sounds/mixkit-scanning-sci-fi-alarm-905.wav';
+// import beep from '../sounds/beep.wav';
 import { RootState } from '../store';
 import { MomentType } from '../types/BoxType';
 
@@ -36,6 +37,9 @@ export default function BoxComponent(
             dispatch(setTimes[text].active(false));
             clearInterval(interval);
             audio.play();
+            setTimeout(() => {
+              audio.pause();
+            }, 3000);
             return 0;
           }
           return prev;
