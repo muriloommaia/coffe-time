@@ -20,7 +20,7 @@ export default function TitleComponent() {
   }, []);
   useEffect(() => {
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter') {
+      if (e.key === 'Enter' || e.key === 'Escape') {
         setEdition(false);
       }
     });
@@ -51,30 +51,24 @@ export default function TitleComponent() {
             {edition ? (
               <InputString className="mb-4" handleChange={handleChange} value={title} type="title" />
             ) : (
-              <p className="text-6xl josefin-font">{title.toUpperCase()}</p>
-
+              <button title="Clique para cambiar" type="button" onClick={handleClick} className="cursor-pointer text-6xl -translate-y-3.5">{title.toUpperCase()}</button>
             )}
-            <p className="text-4xl josefin-font -translate-y-3.5">-con-</p>
+            <p className="text-4xl josefin-font -translate-y-3.5 mb-4">-con-</p>
           </FlexDiv>
           <div className="flex justify-center josefin-font font-extrabold text-orange2 drop-shadow-2xl">
             {edition ? (
               <InputString handleChange={handleChange} value={subTitle} type="subTitle" />
             ) : (
-              <p className="text-6xl -translate-y-3.5">{subTitle.toUpperCase()}</p>
+              <button title="Clique para cambiar" type="button" onClick={handleClick} className="font-bold cursor-pointer text-6xl -translate-y-3.5">{subTitle.toUpperCase()}</button>
             )}
           </div>
 
         </div>
         <button type="submit" className="text-black px-2" onClick={handleClick}>
           {edition
-            ? (
+            && (
               <p className="text-black">
                 <i className="fa-solid fa-check" />
-              </p>
-            )
-            : (
-              <p className="text-black">
-                <i className="fa-solid fa-pen-to-square" />
               </p>
             )}
         </button>
