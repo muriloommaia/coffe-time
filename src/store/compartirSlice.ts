@@ -4,8 +4,8 @@ export const slice = createSlice({
   name: 'compartir',
   initialState: {
     active: false,
-    time: 1500,
-    timeLeft: 1500,
+    time: 0,
+    timeLeft: 0,
   },
   reducers: {
     setActiveCompartir(state, { payload }) {

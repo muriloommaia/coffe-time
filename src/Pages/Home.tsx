@@ -1,5 +1,6 @@
 /* eslint-disable react/react-in-jsx-scope */
-import { MainContainer } from '../Components';
+import styled from 'styled-components';
+import { FlexDiv, MainContainer } from '../Components';
 import ChangeTime from '../Components/ChangeTime';
 // import ButtonStart from '../Components/ButtonStart';
 import GridComponent from '../Components/GridComponent';
@@ -9,10 +10,10 @@ import TitleComponent from '../Components/TitleComponent';
 export default function Home() {
   return (
     <MainContainer className="josefin-font text bg-blue2 text-white1 bg-bg-texture">
-      <nav>
+      <Nav>
         <TitleComponent />
-      </nav>
-      <main className="w-full flex flex-col items-center">
+      </Nav>
+      <FlexDiv flexDirection="column" alignItems="center">
         <GridComponent />
         <div className="pt-6">
           <ChangeTime />
@@ -20,7 +21,9 @@ export default function Home() {
         <div className="py-6 w-10/12">
           <ProgressBar />
         </div>
-      </main>
+      </FlexDiv>
     </MainContainer>
   );
 }
+
+const Nav = styled.nav``;
